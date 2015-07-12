@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570A7EC81B51CE4100B7C05D /* RESTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A7EC71B51CE4100B7C05D /* RESTAPIManager.swift */; };
+		570A7ECA1B51CE6100B7C05D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */; };
 		577B87BD1B51A6B200200A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87BC1B51A6B200200A94 /* AppDelegate.swift */; };
 		577B87BF1B51A6B200200A94 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87BE1B51A6B200200A94 /* FirstViewController.swift */; };
-		577B87C11B51A6B200200A94 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87C01B51A6B200200A94 /* SecondViewController.swift */; };
+		577B87C11B51A6B200200A94 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87C01B51A6B200200A94 /* SettingsViewController.swift */; };
 		577B87C41B51A6B200200A94 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 577B87C21B51A6B200200A94 /* Main.storyboard */; };
 		577B87C61B51A6B200200A94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 577B87C51B51A6B200200A94 /* Images.xcassets */; };
 		577B87C91B51A6B200200A94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 577B87C71B51A6B200200A94 /* LaunchScreen.xib */; };
 		577B87D51B51A6B200200A94 /* la_de_rueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87D41B51A6B200200A94 /* la_de_rueTests.swift */; };
+		57FB7E391B51B37E00783A80 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FB7E381B51B37E00783A80 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +30,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		570A7EC71B51CE4100B7C05D /* RESTAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTAPIManager.swift; sourceTree = "<group>"; };
+		570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		577B87B71B51A6B200200A94 /* la de rue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "la de rue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		577B87BB1B51A6B200200A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577B87BC1B51A6B200200A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		577B87BE1B51A6B200200A94 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		577B87C01B51A6B200200A94 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		577B87C01B51A6B200200A94 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		577B87C31B51A6B200200A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		577B87C51B51A6B200200A94 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		577B87C81B51A6B200200A94 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		577B87CE1B51A6B200200A94 /* la de rueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "la de rueTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		577B87D31B51A6B200200A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577B87D41B51A6B200200A94 /* la_de_rueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = la_de_rueTests.swift; sourceTree = "<group>"; };
+		57FB7E381B51B37E00783A80 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +85,11 @@
 		577B87B91B51A6B200200A94 /* la de rue */ = {
 			isa = PBXGroup;
 			children = (
+				570A7EC71B51CE4100B7C05D /* RESTAPIManager.swift */,
+				57FB7E381B51B37E00783A80 /* ViewController.swift */,
 				577B87BC1B51A6B200200A94 /* AppDelegate.swift */,
 				577B87BE1B51A6B200200A94 /* FirstViewController.swift */,
-				577B87C01B51A6B200200A94 /* SecondViewController.swift */,
+				577B87C01B51A6B200200A94 /* SettingsViewController.swift */,
 				577B87C21B51A6B200200A94 /* Main.storyboard */,
 				577B87C51B51A6B200200A94 /* Images.xcassets */,
 				577B87C71B51A6B200200A94 /* LaunchScreen.xib */,
@@ -93,6 +101,7 @@
 		577B87BA1B51A6B200200A94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */,
 				577B87BB1B51A6B200200A94 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -215,8 +224,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				577B87C11B51A6B200200A94 /* SecondViewController.swift in Sources */,
+				570A7EC81B51CE4100B7C05D /* RESTAPIManager.swift in Sources */,
+				577B87C11B51A6B200200A94 /* SettingsViewController.swift in Sources */,
 				577B87BD1B51A6B200200A94 /* AppDelegate.swift in Sources */,
+				570A7ECA1B51CE6100B7C05D /* SwiftyJSON.swift in Sources */,
+				57FB7E391B51B37E00783A80 /* ViewController.swift in Sources */,
 				577B87BF1B51A6B200200A94 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +425,7 @@
 				577B87DA1B51A6B200200A94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		577B87DB1B51A6B200200A94 /* Build configuration list for PBXNativeTarget "la de rueTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +434,7 @@
 				577B87DD1B51A6B200200A94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

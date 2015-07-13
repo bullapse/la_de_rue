@@ -39,8 +39,15 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
         let data = foodTruckList[indexPath.row]
-        let caption = data["Name"].string
-        cell.textLabel?.text = caption
+        let name = data["Name"].string
+        let isOpen = data["isOpen"].string
+        var caption = "Closed"
+        if (isOpen == "1") {
+            caption = "Open"
+        }
+        cell.textLabel?.text = name
+        cell.detailTextLabel?.text = caption
+        
         
         return cell
     }
@@ -69,7 +76,9 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        println(foodTruckList[row])
+        // prints the whole JSON object to the console. 
+        // foodTruckList[row] return the object
+        print(foodTruckList[row])
     }
     
 }

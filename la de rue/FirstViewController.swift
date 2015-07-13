@@ -7,18 +7,16 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     
     @IBOutlet weak var tableView: UITableView!
     
-    // list of food truck objects from Web Service
-    var foodTrucks = NSMutableArray()
-    
-    let textCellIdentifier = "TextCell"
-//    
-//    let truckNames = ["Didn't work"]
+    var foodTruckList: [JSON] = []
+
     
     override func viewDidLoad() {
 
@@ -26,9 +24,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView.delegate = self
         tableView.dataSource = self
-        self.view.addSubview(self.tableView)
-        
-        
+        loadFoodTrucks()
         
     }
     
@@ -37,31 +33,35 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foodTrucks.count
+        return foodTruckList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? UITableViewCell
+        var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let data = foodTruckList[indexPath.row]
+        let caption = data["Name"].string
+        cell.textLabel?.text = caption
         
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
-        }
-        
-        let foodTruck:JSON = JSON(self.foodTrucks[indexPath.row])
-
-        
-        return cell!
+        return cell
     }
     
     func loadFoodTrucks() {
-        print("in loadFoodTrucks")
-        RESTAPIManager.sharedInstance.getTruckNames { json -> Void in
-            let results = json["results"]
-            for (index: String, subJson: JSON) in results {
-                let foodTruckName: AnyObject = subJson["Name"].object
-
-            }
+        Alamofire.request(.GET, "http://localhost:4730")
+            .responseJSON { (_, _, json, _) in
+                if json != nil {
+                    var jsonObj = JSON(json!)
+                    if let data = jsonObj["results"].arrayValue as [JSON]?{
+                        self.foodTruckList = data
+                        self.tableView.reloadData()
+                        print(self.foodTruckList)
+                    }
+                }
+                
+                
+                
         }
+        
+        
     }
 
     // MARK:  UITableViewDelegate Methods
@@ -69,7 +69,7 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        println(foodTrucks[row])
+        println(foodTruckList[row])
     }
     
 }

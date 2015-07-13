@@ -14,7 +14,7 @@ class RESTAPIManager: NSObject {
  
     static let sharedInstance = RESTAPIManager()
     
-    baseURL = "http://localhost:4730"
+    var baseURL = "http://localhost:4730"
     
     func getTruckNames(OnCompletion: (JSON) -> Void) {
         makeHTTPGetRequest(baseURL, onCompletion: { json, err -> Void in
@@ -24,13 +24,13 @@ class RESTAPIManager: NSObject {
     }
     
     func makeHTTPGetRequest(path: String, onCompletion: ServiceResponce) {
-        let request = NSMutableURLRequest(URL: NSURL(string: Path)!)
+        let request = NSMutableURLRequest(URL: NSURL(string: path)!)
         
         let session = NSURLSession.sharedSession()
         
         let task = session.dataTaskWithRequest(request, completionHandler: { data, responce, error in
-            let json:JSON = JSON(data)
-            onCompletion(JSON, error)
+            let json:JSON = JSON(data: data)
+            onCompletion(json, error)
     })
         task.resume()
     }

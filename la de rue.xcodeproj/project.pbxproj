@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570A7EC81B51CE4100B7C05D /* RESTAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A7EC71B51CE4100B7C05D /* RESTAPIManager.swift */; };
 		570A7ECA1B51CE6100B7C05D /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */; };
 		577B87BD1B51A6B200200A94 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87BC1B51A6B200200A94 /* AppDelegate.swift */; };
 		577B87BF1B51A6B200200A94 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577B87BE1B51A6B200200A94 /* FirstViewController.swift */; };
@@ -30,8 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		570A7EC71B51CE4100B7C05D /* RESTAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTAPIManager.swift; sourceTree = "<group>"; };
-		570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "la de rue/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		577B87B71B51A6B200200A94 /* la de rue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "la de rue.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		577B87BB1B51A6B200200A94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		577B87BC1B51A6B200200A94 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +65,7 @@
 		577B87AE1B51A6B200200A94 = {
 			isa = PBXGroup;
 			children = (
+				570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */,
 				577B87B91B51A6B200200A94 /* la de rue */,
 				577B87D11B51A6B200200A94 /* la de rueTests */,
 				577B87B81B51A6B200200A94 /* Products */,
@@ -85,7 +84,6 @@
 		577B87B91B51A6B200200A94 /* la de rue */ = {
 			isa = PBXGroup;
 			children = (
-				570A7EC71B51CE4100B7C05D /* RESTAPIManager.swift */,
 				57FB7E381B51B37E00783A80 /* ViewController.swift */,
 				577B87BC1B51A6B200200A94 /* AppDelegate.swift */,
 				577B87BE1B51A6B200200A94 /* FirstViewController.swift */,
@@ -101,7 +99,6 @@
 		577B87BA1B51A6B200200A94 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				570A7EC91B51CE6100B7C05D /* SwiftyJSON.swift */,
 				577B87BB1B51A6B200200A94 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -224,7 +221,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570A7EC81B51CE4100B7C05D /* RESTAPIManager.swift in Sources */,
 				577B87C11B51A6B200200A94 /* SettingsViewController.swift in Sources */,
 				577B87BD1B51A6B200200A94 /* AppDelegate.swift in Sources */,
 				570A7ECA1B51CE6100B7C05D /* SwiftyJSON.swift in Sources */,

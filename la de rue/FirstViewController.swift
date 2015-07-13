@@ -13,9 +13,12 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var tableView: UITableView!
     
-    let textCellIdentifier = "TextCell"
+    // list of food truck objects from Web Service
+    var foodTrucks = NSMutableArray()
     
-    let truckNames = ["Didn't work"]
+    let textCellIdentifier = "TextCell"
+//    
+//    let truckNames = ["Didn't work"]
     
     override func viewDidLoad() {
 
@@ -23,32 +26,50 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         tableView.delegate = self
         tableView.dataSource = self
+        self.view.addSubview(self.tableView)
+        
+        
+        
     }
     
-    // MARK:  UITextFieldDelegate Methods
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+    @IBAction func loadTableView(sender: AnyObject) {
+        loadFoodTrucks()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return truckNames.count
+        return foodTrucks.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(textCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("Cell") as? UITableViewCell
         
-        let row = indexPath.row
-        cell.textLabel?.text = truckNames[row]
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Value1, reuseIdentifier: "CELL")
+        }
         
-        return cell
+        let foodTruck:JSON = JSON(self.foodTrucks[indexPath.row])
+
+        
+        return cell!
     }
     
+    func loadFoodTrucks() {
+        print("in loadFoodTrucks")
+        RESTAPIManager.sharedInstance.getTruckNames { json -> Void in
+            let results = json["results"]
+            for (index: String, subJson: JSON) in results {
+                let foodTruckName: AnyObject = subJson["Name"].object
+
+            }
+        }
+    }
+
     // MARK:  UITableViewDelegate Methods
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
-        println(truckNames[row])
+        println(foodTrucks[row])
     }
     
 }

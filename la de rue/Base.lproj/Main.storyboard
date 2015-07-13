@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -47,6 +47,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5GM-Wi-lGQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Gng-QQ-kQk">
+                            <connections>
+                                <action selector="loadTableView:" destination="9pv-A4-QxB" id="8JJ-3Q-5EB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Map it" id="MWE-uZ-OoN">
                             <connections>
                                 <segue destination="hax-xn-9h0" kind="show" id="RKN-4H-MzM"/>
